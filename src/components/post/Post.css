@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
+.post {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--wit);
+    height: 150px;
+    width: 330px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin: 10px;
+    box-shadow: 10px 10px 5px #EFF0E0;
+}
+
+.preFixed {
+    color: var(--rood)
+}
+
+.postFootNote {
+    color: var(--zwart);
+    font-family: 'Quicksand', sans-serif;
+    font-size: smaller;
+}

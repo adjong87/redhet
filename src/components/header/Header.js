@@ -1,0 +1,34 @@
+import React from 'react';
+import './Header.css'
+
+function Header({title, image}) {
+    return (
+        <>
+            <div className="header-outer-container">
+                <div className="left-container">
+
+                    {/* left container*/}
+
+                </div>
+                <div className="inner-container">
+                    <div className="inner-top-container">
+                    </div>
+                    <div className="inner-bottom-container">
+                        <img
+                            src={image}
+                            alt="redhet-logo"/>
+                        <h1>{title}</h1>
+                    </div>
+
+                </div>
+                <div className="right-container">
+
+                    {/* right container*/}
+
+                </div>
+            </div>
+        </>
+    );
+}
+
+export default Header;
