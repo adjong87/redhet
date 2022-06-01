@@ -12,7 +12,7 @@ img {
     justify-content: space-evenly;
 }
 
-.home-outer-container {
+.outer-container {
     display: flex;
     justify-content: space-around;
     width: 1268px;

@@ -12,9 +12,10 @@ function Header({title, image}) {
                 </div>
                 <div className="inner-container">
                     <div className="inner-top-container">
+                        {image && <img alt={image} src={image}/>}
+
                     </div>
                     <div className="inner-bottom-container">
-                        {image && <img alt={image} src={image}/>}
                         <h1>{title}</h1>
                     </div>
 

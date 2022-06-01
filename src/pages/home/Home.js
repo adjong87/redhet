@@ -43,8 +43,9 @@ function Home() {
                         <uL>
                             {Object.keys(posts).length > 0 && posts.map((post) => {
                                 return <Post
+                                    key={post.data.subreddit}
                                     title={post.data.title}
-                                    subredditID={post.data.id}
+                                    subredditID={post.data.subreddit}
                                     prefix={post.data.subreddit_name_prefixed}
                                     comments={post.data.num_comments}
                                     ups={post.data.ups}/>
@@ -54,7 +55,7 @@ function Home() {
                     </div>
                     <div className="right-container">
 
-                        {/*right container*/}
+                        right container
 
                     </div>
                 </div>
