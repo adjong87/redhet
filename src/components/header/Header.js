@@ -14,9 +14,7 @@ function Header({title, image}) {
                     <div className="inner-top-container">
                     </div>
                     <div className="inner-bottom-container">
-                        <img
-                            src={image}
-                            alt="redhet-logo"/>
+                        {image && <img alt={image} src={image}/>}
                         <h1>{title}</h1>
                     </div>
 

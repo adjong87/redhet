@@ -12,7 +12,7 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/subreddit/:id">
+          <Route path="/subreddit/:subredditId">
               <Subreddit />
           </Route>
         </Switch>

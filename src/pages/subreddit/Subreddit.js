@@ -8,7 +8,7 @@ function Subreddit() {
     const [posts, setPosts] = useState(null);
     const [error, toggleError] = useState(false)
 
-    const { subredditId } = useParams();
+    const {subredditId} = useParams();
 
     useEffect(() => {
         async function fetchData() {
@@ -30,20 +30,21 @@ function Subreddit() {
 
     return (
         <>
-        {error && <span>Er ging wat mis!</span>}
-        <Header
-                title={posts.data.display_name_prefixed}/>
-                <div className="outer-container">
-                    <div className="left-container">
-                        <p>left-container</p>
-                    </div>
-                    <div className="inner-container">
-                        subreddit
-                    </div>
-                    <div className="right-container">
-                        <p>right-container</p>
-                    </div>
+            {error && <span>Er ging wat mis!</span>}
+            <Header
+                title="test"/>
+            <div className="outer-container">
+                <div className="left-container">
+                    <p>left-container</p>
                 </div>
+                <div className="inner-container">
+                    subreddit
+                </div>
+                <div className="right-container">
+                    <p>right-container</p>
+                </div>
+            </div>
+
         </>
     );
 }
