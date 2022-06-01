@@ -3,22 +3,20 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {useParams} from "react-router-dom";
 import Header from "../../components/header/Header";
-import Post from "../../components/post/Post";
-
 
 function Subreddit() {
-    const [posts, setPosts] = useState({});
+    const [posts, setPosts] = useState(null);
     const [error, toggleError] = useState(false)
 
-    let {id} = useParams();
+    const { subredditId } = useParams();
 
     useEffect(() => {
-        async function fetchData(subIdInput) {
+        async function fetchData() {
             toggleError(false)
 
             try {
-                const result = await axios.get(`https://www.reddit.com/r/${id}/about.json`);
-                setPosts(result.data);
+                const result = await axios.get(`https://www.reddit.com/r/${subredditId}/about.json`);
+                setPosts(result.data.data);
                 console.log(posts)
             } catch (e) {
                 console.error(e);
@@ -26,8 +24,9 @@ function Subreddit() {
             }
         }
 
-        fetchData(id)
-    }, [id]);
+        fetchData()
+
+    }, []);
 
     return (
         <>
@@ -39,15 +38,7 @@ function Subreddit() {
                         <p>left-container</p>
                     </div>
                     <div className="inner-container">
-                        {Object.keys(posts).length > 0 && posts.map((post) => {
-                            return <Post
-                                title={post.data.title}
-                                subredditID={post.data.subreddit_id}
-                                prefix={post.data.subreddit_name_prefixed}
-                                comments={post.data.num_comments}
-                                ups={post.data.ups}/>
-                        })
-                        }
+                        subreddit
                     </div>
                     <div className="right-container">
                         <p>right-container</p>

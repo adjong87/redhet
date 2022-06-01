@@ -7,12 +7,10 @@ import logo from '../../assets/logo.png'
 
 function Home() {
     const [posts, setPosts] = useState({});
-    const [error, toggleError] = useState(false)
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         async function fetchData() {
-            toggleError(false)
             setIsLoading(true);
             try {
                 const result = await axios.get(`https://www.reddit.com/hot.json?limit=15`);
@@ -20,7 +18,6 @@ function Home() {
                 setIsLoading(false);
             } catch (e) {
                 console.error(e);
-                toggleError(true)
             }
         }
 
@@ -38,7 +35,9 @@ function Home() {
 
                 <div className="home-outer-container">
                     <div className="left-container">
-                        <p>left-container</p>
+
+                        {/*left container*/}
+
                     </div>
                     <div className="inner-container">
                         <uL>
@@ -54,7 +53,9 @@ function Home() {
                         </uL>
                     </div>
                     <div className="right-container">
-                        <p>right-container</p>
+
+                        {/*right container*/}
+
                     </div>
                 </div>
             )}
