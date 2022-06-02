@@ -25,13 +25,14 @@ function Home() {
     }, []);
 
     return (
+
         <>
             <Header
                 image={logo}
                 title="REDDIT"
             />
 
-            {isLoading ? (<p>Loading ...</p>) : (
+
 
                 <div className="home-outer-container">
                     <div className="left-container">
@@ -39,8 +40,10 @@ function Home() {
                         {/*left container*/}
 
                     </div>
-                    <div className="inner-container">
-                        <uL>
+                    {isLoading ? (<h1>Loading ...</h1>) : (
+
+                        <div className="inner-container">
+                        <ul>
                             {Object.keys(posts).length > 0 && posts.map((post) => {
                                 return <Post
                                     key={post.data.subreddit}
@@ -51,15 +54,15 @@ function Home() {
                                     ups={post.data.ups}/>
                             })
                             }
-                        </uL>
-                    </div>
+                        </ul>
+                    </div>)}
                     <div className="right-container">
 
-                        right container
+                        {/*right container*/}
 
                     </div>
                 </div>
-            )}
+
         </>
     );
 }
